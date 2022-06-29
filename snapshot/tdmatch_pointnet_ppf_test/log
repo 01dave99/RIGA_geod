@@ -1,0 +1,81 @@
+#parameters 0.505441 M
+#parameters 0.505441 M
+#parameters 0.505441 M
+Successfully load pretrained model from snapshot/tdmatch_pointnet_ppf/checkpoints/model_best_coarse_matching_recall.pth!
+Current best total loss 5.272898213653794
+Current best coarse loss 1.294424277602238
+Current best fine loss 3.9784739413358143
+Current best coarse matching recall 0.032083380967378616
+Current best fine matching recall -1.0
+#parameters 0.505441 M
+Successfully load pretrained model from snapshot/tdmatch_pointnet_ppf/checkpoints/model_best_coarse_matching_recall.pth!
+Current best total loss 5.272898213653794
+Current best coarse loss 1.294424277602238
+Current best fine loss 3.9784739413358143
+Current best coarse matching recall 0.032083380967378616
+Current best fine matching recall -1.0
+#parameters 0.505441 M
+Successfully load pretrained model from snapshot/tdmatch_pointnet_ppf/checkpoints/model_best_coarse_matching_recall.pth!
+Current best total loss 5.272898213653794
+Current best coarse loss 1.294424277602238
+Current best fine loss 3.9784739413358143
+Current best coarse matching recall 0.032083380967378616
+Current best fine matching recall -1.0
+#parameters 0.505441 M
+Successfully load pretrained model from snapshot/tdmatch_pointnet_ppf/checkpoints/model_best_coarse_matching_recall.pth!
+Current best total loss 5.339964389801025
+Current best coarse loss 1.2476749420166016
+Current best fine loss 4.085736274719238
+Current best coarse matching recall 0.08163265138864517
+Current best fine matching recall 0.4936724603176117
+#parameters 6.721217 M
+Successfully load pretrained model from snapshot/tdmatch_pointnet_ppf/checkpoints/model_best_coarse_matching_recall.pth!
+Current best total loss 4.738444805145264
+Current best coarse loss 1.1336851119995117
+Current best fine loss 3.603137493133545
+Current best coarse matching recall 0.16811594367027283
+Current best fine matching recall 0.3184509575366974
+#parameters 6.721217 M
+Successfully load pretrained model from snapshot/tdmatch_pointnet_ppf/checkpoints/model_best_coarse_matching_recall.pth!
+Current best total loss 4.378400802612305
+Current best coarse loss 0.9967771768569946
+Current best fine loss 3.3515353202819824
+Current best coarse matching recall 0.359649121761322
+Current best fine matching recall 0.34427207708358765
+#parameters 6.721217 M
+Successfully load pretrained model from snapshot/tdmatch_pointnet_ppf/checkpoints/model_best_coarse_matching_recall.pth!
+Current best total loss 4.378400802612305
+Current best coarse loss 0.9967771768569946
+Current best fine loss 3.3515353202819824
+Current best coarse matching recall 0.359649121761322
+Current best fine matching recall 0.34427207708358765
+#parameters 6.721217 M
+#parameters 0.846593 M
+Successfully load pretrained model from snapshot/tdmatch_pointnet_ppf/checkpoints/model_best_coarse_matching_recall.pth!
+Current best total loss 4.6900177001953125
+Current best coarse loss 1.0726178884506226
+Current best fine loss 3.6173999309539795
+Current best coarse matching recall 0.03846153989434242
+Current best fine matching recall -1.0
+#parameters 0.846593 M
+Successfully load pretrained model from snapshot/tdmatch_pointnet_ppf/checkpoints/model_best_coarse_matching_recall.pth!
+Current best total loss 4.356159210205078
+Current best coarse loss 0.9865448474884033
+Current best fine loss 3.3591458797454834
+Current best coarse matching recall 0.14814814925193787
+Current best fine matching recall 0.5397034287452698
+#parameters 0.609217 M
+#parameters 1.453633 M
+Successfully load pretrained model from snapshot/tdmatch_pointnet_ppf/checkpoints/model_best_coarse_matching_recall.pth!
+Current best total loss 3.1424813270568848
+Current best coarse loss 0.7737518548965454
+Current best fine loss 2.341249465942383
+Current best coarse matching recall 0.1538461595773697
+Current best fine matching recall 0.616912841796875
+#parameters 1.453633 M
+Successfully load pretrained model from snapshot/tdmatch_pointnet_ppf/checkpoints/model_best_coarse_matching_recall.pth!
+Current best total loss 3.1424813270568848
+Current best coarse loss 0.7737518548965454
+Current best fine loss 2.341249465942383
+Current best coarse matching recall 0.1538461595773697
+Current best fine matching recall 0.616912841796875

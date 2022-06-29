@@ -1,0 +1,213 @@
+RIGA(
+  (local_descriptor): PointNetfeat(
+    (MLPs): Sequential(
+      (0): Conv1d(4, 64, kernel_size=(1,), stride=(1,))
+      (1): InstanceNorm1d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (2): ReLU()
+      (3): Conv1d(64, 128, kernel_size=(1,), stride=(1,))
+      (4): InstanceNorm1d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (5): ReLU()
+      (6): Conv1d(128, 256, kernel_size=(1,), stride=(1,))
+      (7): InstanceNorm1d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+      (8): ReLU()
+      (9): Conv1d(256, 512, kernel_size=(1,), stride=(1,))
+    )
+    (final_conv): Conv1d(512, 128, kernel_size=(1,), stride=(1,))
+  )
+  (transformer): GeometricTransformer(
+    (embedding): GeometricStructureEmbedding(
+      (embedding): SinusoidalPositionalEmbedding()
+      (proj_d): Linear(in_features=128, out_features=128, bias=True)
+      (proj_a): Linear(in_features=128, out_features=128, bias=True)
+    )
+    (in_proj): Linear(in_features=128, out_features=128, bias=True)
+    (transformer): RPEConditionalTransformer(
+      (layers): ModuleList(
+        (0): RPETransformerLayer(
+          (attention): RPEAttentionLayer(
+            (attention): RPEMultiHeadAttention(
+              (proj_q): Linear(in_features=128, out_features=128, bias=True)
+              (proj_k): Linear(in_features=128, out_features=128, bias=True)
+              (proj_v): Linear(in_features=128, out_features=128, bias=True)
+              (proj_p): Linear(in_features=128, out_features=128, bias=True)
+              (dropout): Identity()
+            )
+            (linear): Linear(in_features=128, out_features=128, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          )
+          (output): AttentionOutput(
+            (expand): Linear(in_features=128, out_features=256, bias=True)
+            (activation): ReLU()
+            (squeeze): Linear(in_features=256, out_features=128, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (1): TransformerLayer(
+          (attention): AttentionLayer(
+            (attention): MultiHeadAttention(
+              (proj_q): Linear(in_features=128, out_features=128, bias=True)
+              (proj_k): Linear(in_features=128, out_features=128, bias=True)
+              (proj_v): Linear(in_features=128, out_features=128, bias=True)
+              (dropout): Identity()
+            )
+            (linear): Linear(in_features=128, out_features=128, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          )
+          (output): AttentionOutput(
+            (expand): Linear(in_features=128, out_features=256, bias=True)
+            (activation): ReLU()
+            (squeeze): Linear(in_features=256, out_features=128, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (2): RPETransformerLayer(
+          (attention): RPEAttentionLayer(
+            (attention): RPEMultiHeadAttention(
+              (proj_q): Linear(in_features=128, out_features=128, bias=True)
+              (proj_k): Linear(in_features=128, out_features=128, bias=True)
+              (proj_v): Linear(in_features=128, out_features=128, bias=True)
+              (proj_p): Linear(in_features=128, out_features=128, bias=True)
+              (dropout): Identity()
+            )
+            (linear): Linear(in_features=128, out_features=128, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          )
+          (output): AttentionOutput(
+            (expand): Linear(in_features=128, out_features=256, bias=True)
+            (activation): ReLU()
+            (squeeze): Linear(in_features=256, out_features=128, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (3): TransformerLayer(
+          (attention): AttentionLayer(
+            (attention): MultiHeadAttention(
+              (proj_q): Linear(in_features=128, out_features=128, bias=True)
+              (proj_k): Linear(in_features=128, out_features=128, bias=True)
+              (proj_v): Linear(in_features=128, out_features=128, bias=True)
+              (dropout): Identity()
+            )
+            (linear): Linear(in_features=128, out_features=128, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          )
+          (output): AttentionOutput(
+            (expand): Linear(in_features=128, out_features=256, bias=True)
+            (activation): ReLU()
+            (squeeze): Linear(in_features=256, out_features=128, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (4): RPETransformerLayer(
+          (attention): RPEAttentionLayer(
+            (attention): RPEMultiHeadAttention(
+              (proj_q): Linear(in_features=128, out_features=128, bias=True)
+              (proj_k): Linear(in_features=128, out_features=128, bias=True)
+              (proj_v): Linear(in_features=128, out_features=128, bias=True)
+              (proj_p): Linear(in_features=128, out_features=128, bias=True)
+              (dropout): Identity()
+            )
+            (linear): Linear(in_features=128, out_features=128, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          )
+          (output): AttentionOutput(
+            (expand): Linear(in_features=128, out_features=256, bias=True)
+            (activation): ReLU()
+            (squeeze): Linear(in_features=256, out_features=128, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (5): TransformerLayer(
+          (attention): AttentionLayer(
+            (attention): MultiHeadAttention(
+              (proj_q): Linear(in_features=128, out_features=128, bias=True)
+              (proj_k): Linear(in_features=128, out_features=128, bias=True)
+              (proj_v): Linear(in_features=128, out_features=128, bias=True)
+              (dropout): Identity()
+            )
+            (linear): Linear(in_features=128, out_features=128, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          )
+          (output): AttentionOutput(
+            (expand): Linear(in_features=128, out_features=256, bias=True)
+            (activation): ReLU()
+            (squeeze): Linear(in_features=256, out_features=128, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (6): RPETransformerLayer(
+          (attention): RPEAttentionLayer(
+            (attention): RPEMultiHeadAttention(
+              (proj_q): Linear(in_features=128, out_features=128, bias=True)
+              (proj_k): Linear(in_features=128, out_features=128, bias=True)
+              (proj_v): Linear(in_features=128, out_features=128, bias=True)
+              (proj_p): Linear(in_features=128, out_features=128, bias=True)
+              (dropout): Identity()
+            )
+            (linear): Linear(in_features=128, out_features=128, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          )
+          (output): AttentionOutput(
+            (expand): Linear(in_features=128, out_features=256, bias=True)
+            (activation): ReLU()
+            (squeeze): Linear(in_features=256, out_features=128, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+        (7): TransformerLayer(
+          (attention): AttentionLayer(
+            (attention): MultiHeadAttention(
+              (proj_q): Linear(in_features=128, out_features=128, bias=True)
+              (proj_k): Linear(in_features=128, out_features=128, bias=True)
+              (proj_v): Linear(in_features=128, out_features=128, bias=True)
+              (dropout): Identity()
+            )
+            (linear): Linear(in_features=128, out_features=128, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          )
+          (output): AttentionOutput(
+            (expand): Linear(in_features=128, out_features=256, bias=True)
+            (activation): ReLU()
+            (squeeze): Linear(in_features=256, out_features=128, bias=True)
+            (dropout): Identity()
+            (norm): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+          )
+        )
+      )
+    )
+    (out_proj): Linear(in_features=128, out_features=128, bias=True)
+  )
+  (coarse_proj): Sequential(
+    (0): Conv1d(128, 64, kernel_size=(1,), stride=(1,))
+    (1): InstanceNorm1d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): ReLU()
+    (3): Conv1d(64, 32, kernel_size=(1,), stride=(1,))
+    (4): InstanceNorm1d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (5): ReLU()
+    (6): Conv1d(32, 32, kernel_size=(1,), stride=(1,))
+  )
+  (fine_proj): Sequential(
+    (0): Conv1d(128, 64, kernel_size=(1,), stride=(1,))
+    (1): InstanceNorm1d(64, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): ReLU()
+    (3): Conv1d(64, 32, kernel_size=(1,), stride=(1,))
+    (4): InstanceNorm1d(32, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (5): ReLU()
+    (6): Conv1d(32, 32, kernel_size=(1,), stride=(1,))
+  )
+  (OT): LearnableLogOptimalTransport(num_iter=100)
+)

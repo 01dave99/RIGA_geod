@@ -1,0 +1,67 @@
+misc:
+  exp_dir: modelnet_pointnet_ppf_fine_only
+  gpu_mode: True
+  verbose: True
+  verbose_freq: 10
+  mode: train
+
+model:
+  pretrain: ''
+  input_type: ppf
+  with_transformer: True
+  proj_dim: 64
+  local_out_dim: 256
+  transformer_feats_dim: 256
+  transformer_num_head: 4
+  transformer_sigma_d: 0.2
+  transformer_sigma_a: 15
+  transformer_angle_k: 3
+  transformer_architecture: ['self', 'cross', 'self', 'cross', 'self', 'cross', 'self', 'cross', 'self', 'cross', 'self', 'cross']
+  descriptor_dim: 32
+  max_neighbors: 16
+
+optim:
+  optimizer: ADAM
+  lr: 0.0003
+  weight_decay: 0.000001
+  momentum: 0.98
+  scheduler: ExpLR
+  scheduler_gamma: 0.98
+  iter_size: 1
+
+data:
+  dataset: modelnet40
+  patch_per_frame: 256
+  point_per_patch: 64
+  point_per_p2n: 32
+  patch_vicinity: 0.2
+  n_points: 1024
+  n_subsampled_points: 768
+  rot_factor: 1
+  gaussian_noise: True
+  unseen: False
+
+  self_training: False
+  resample: 0.8
+  decentralization: False
+  voxel_size: 0.025
+  interpolate_neighbors: 3
+
+  overlap_radius: 0.05
+  overlap_thres: 0.1
+
+  rotated: False
+
+train:
+  max_epoch: 200
+  batch_size: 8
+  training_max_iter: 3500
+  val_max_iter: 500
+  scheduler_interval: 1
+  snapshot_interval: 1
+  num_workers: 8
+  ratio_drop: -1
+  loss_type: Circle
+  max_corr: 128
+  w_coarse: 1
+  w_fine: 1

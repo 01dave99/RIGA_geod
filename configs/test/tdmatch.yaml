@@ -1,0 +1,69 @@
+misc:
+  exp_dir: tdmatch_pointnet_ppf_test
+  gpu_mode: False
+  verbose: True
+  verbose_freq: 10
+  mode: test
+
+model:
+  pretrain: 'snapshot/tdmatch_pointnet_ppf/checkpoints/model_best_coarse_matching_recall.pth'
+  #pretrain: ''
+  input_type: ppf
+  with_transformer: True
+  proj_dim: 64
+  local_out_dim: 128
+  transformer_feats_dim: 128
+  transformer_num_head: 4
+  transformer_sigma_d: 0.2
+  transformer_sigma_a: 15
+  transformer_angle_k: 3
+  transformer_architecture: ['self', 'cross','self','cross','self','cross','self','cross']
+  descriptor_dim: 32
+  max_neighbors: 16
+
+optim:
+  optimizer: ADAM
+  lr: 0.001
+  weight_decay: 0.000001
+  momentum: 0.98
+  scheduler: ExpLR
+  scheduler_gamma: 0.95
+  iter_size: 1
+
+data:
+  dataset: tdmatch
+  root: data/indoor
+  train_info: configs/tdmatch/small_val_info.pkl
+  val_info: configs/tdmatch/small_val_info.pkl
+  augment_noise: 0.005
+  benchmark: 3DLoMatch
+  patch_per_frame: 16
+  point_per_patch: 32
+  point_per_p2n: 128
+  patch_vicinity: 0.3
+  #pos_margin: 0.1
+  #safe_radius: 0.2
+  #overlap_radius: 0.1
+  resample: 0.8
+  decentralization: False
+  voxel_size: 1
+  interpolate_neighbors: 3
+
+  overlap_thres: 0.
+  overlap_radius: 0.0375
+  rotated: False
+
+train:
+  max_epoch: 150
+  batch_size: 1
+  training_max_iter: 3500
+  val_max_iter: 500
+  scheduler_interval: 1
+  snapshot_interval: 1
+  num_workers: 2
+  ratio_drop: -1
+  loss_type: Circle
+  max_corr: 128
+  w_coarse: 1
+  w_fine: 1
+
