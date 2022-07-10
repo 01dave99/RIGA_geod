@@ -16,3 +16,4 @@ PyYAML
 scikit_learn
 tensorboardX
 vtk_visualizer
+einops
